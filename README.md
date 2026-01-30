@@ -47,10 +47,12 @@ Esta intranet proporciona acceso centralizado a:
 
 - **Interfaz responsive** con Bootstrap 5
 - **Tema oscuro** por defecto
-- **Navegación intuitiva** por departamentos
+- **Navegación simplificada** con dropdown único "PPG"
+- **Páginas dedicadas** para Áreas, Servicios y Herramientas
 - **Acceso a servicios locales** (etiquetas, reportes)
 - **Documentación integrada** de herramientas como Odoo
 - **Sistema de sugerencias** para mejora continua
+- **Indicadores de estado** para servicios en tiempo real
 
 ## 🛠️ Tecnologías Utilizadas
 

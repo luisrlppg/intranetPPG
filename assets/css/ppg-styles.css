@@ -105,6 +105,16 @@ body {
     padding: 1.25rem;
 }
 
+/* Cards clickeables */
+.ppg-card[onclick], .ppg-card[style*="cursor: pointer"] {
+    cursor: pointer;
+}
+
+.ppg-card[onclick]:hover, .ppg-card[style*="cursor: pointer"]:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
 /* Botones personalizados */
 .btn-ppg-primary {
     background: linear-gradient(135deg, var(--ppg-primary), var(--ppg-accent));
@@ -291,6 +301,52 @@ body {
 
 .ppg-shadow-lg {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Dashboard específico */
+.stats-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.dashboard-metric {
+    transition: all 0.3s ease;
+}
+
+.dashboard-metric:hover {
+    transform: translateY(-2px);
+}
+
+/* Badges mejorados */
+.badge {
+    font-weight: 500;
+}
+
+.badge.fs-6 {
+    font-size: 0.9rem !important;
+}
+
+/* Lista de anuncios */
+.list-group-item {
+    transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+/* Indicadores de estado */
+.status-indicator-online {
+    color: var(--ppg-success);
+}
+
+.status-indicator-offline {
+    color: var(--ppg-danger);
+}
+
+.status-indicator-warning {
+    color: var(--ppg-warning);
 }
 
 /* Responsive adjustments */

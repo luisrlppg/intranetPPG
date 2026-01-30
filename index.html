@@ -28,33 +28,15 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li>
+          <li><a href="./index.html" class="nav-link px-2 text-secondary">Inicio</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle show px-2 text-white" href="#" data-bs-toggle="dropdown" aria-expanded="true">Departamentos</a>
+            <a class="nav-link dropdown-toggle show px-2 text-white" href="#" data-bs-toggle="dropdown" aria-expanded="true">PPG</a>
             <ul class="dropdown-menu" data-bs-popper="static">
-              <li><a class="dropdown-item" href="./areas/almacen/index.html">Almacen</a></li>
-              <li><a class="dropdown-item" href="./areas/ventas/index.html">Ventas</a></li>
-              <li><a class="dropdown-item" href="./areas/produccion/index.html">Produccion</a></li>
-              <li><a class="dropdown-item" href="./areas/taller/index.html">Taller</a></li>
+              <li><a class="dropdown-item" href="./areas/index.html">🏢 Áreas</a></li>
+              <li><a class="dropdown-item" href="./services/index.html">🌐 Servicios</a></li>
+              <li><a class="dropdown-item" href="./tools/index.html">🛠️ Herramientas</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle show px-2 text-white" href="#" data-bs-toggle="dropdown" aria-expanded="true">Servicios</a>
-            <ul class="dropdown-menu" data-bs-popper="static">
-              <li><a class="dropdown-item" href="http://192.168.1.160:8000/">Etiquetas</a></li>
-              <li><a class="dropdown-item" href="http://192.168.1.160:8001/">Reportes</a></li>
-              <li><a class="dropdown-item" href="./services/localaccess.html">Acceso Publico</a></li>
-              <li><a class="dropdown-item" href="./services/localsrc.html">Red Local</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle show px-2 text-white" href="#" data-bs-toggle="dropdown" aria-expanded="true">Herramientas</a>
-            <ul class="dropdown-menu" data-bs-popper="static">
-              <li><a class="dropdown-item" href="./tools/odoo/index.html">Odoo</a></li>
-            </ul>
-          </li>
-          <li><a href="./docs/contact/ext-tel.html" class="nav-link px-2 text-secondary">Teléfonos</a></li>
-          <li><a href="./docs/help/suggest.html" class="nav-link px-2 text-secondary">Sugerencias</a></li>
           <li><a href="./docs/index.html" class="nav-link px-2 text-secondary">Documentación</a></li>
           <li><a href="./docs/company/organigrama.html" class="nav-link px-2 text-secondary">Acerca de</a></li>
         </ul>
@@ -73,37 +55,245 @@
     </div>
   </header>
 
-  <div class="m-5">
-    <div class="bg-body-tertiaryp-5 rounded">
-      <div class="col-sm-8 mx-auto">
-        <h1>Bienvenidos a la Central de Plasticos Plasa</h1>
-        <p>
-          En esta pagina podrás encontrar los procedimientos, estándares, herramientas y mejores prácticas para
-          que puedas dominar cada actividad del dia a dia dentro de plasticos plasa, puedes impulsar tu desarrollo
-          dentro de la empresa y empezar a ser líder de tu equipo siguiendo los valores de la empresa.
-        </p>
-        <hr>
-
-        <p class="d-inline-flex gap-1">
-          <a class="btn btn-outline-light" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Visita guiada por el sitio
-          </a>
-        </p>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body m-3">
-              <p>Navega por los menus y busca el area que necesites o quieras aprender</p>
-          </div>
-        </div>
-        <div class="d-flex justify-content-end">
-          <img class="rounded-5" src="./assets/img/ppgcolor.jpg" alt="" width="570">
+  <div class="container-fluid my-4">
+    <!-- Hero Section -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="text-center">
+          <h1 class="display-4 ppg-text-gradient mb-3">Central de Plásticos Plasa</h1>
+          <p class="lead text-muted mb-4">Tu centro de operaciones digital</p>
         </div>
       </div>
     </div>
 
+    <!-- Accesos Rápidos Principales -->
+    <div class="row g-4 mb-5">
+      <div class="col-lg-6">
+        <div class="card ppg-card h-100">
+          <div class="card-header ppg-card-header">
+            <h5 class="mb-0">⚡ Accesos Rápidos</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-grid gap-2">
+              <button class="btn btn-ppg-primary" onclick="window.open('http://192.168.1.160:8000/', '_blank')">
+                🏷️ Sistema de Etiquetas
+              </button>
+              <button class="btn btn-ppg-primary" onclick="window.open('http://192.168.1.160:8001/', '_blank')">
+                📊 Generar Reportes
+              </button>
+              <button class="btn btn-ppg-outline" onclick="window.location.href='./tools/odoo/index.html'">
+                📋 Odoo ERP
+              </button>
+              <button class="btn btn-ppg-outline" onclick="window.location.href='./docs/contact/ext-tel.html'">
+                📞 Directorio
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estado de Sistemas -->
+      <div class="col-lg-6">
+        <div class="card ppg-card h-100">
+          <div class="card-header ppg-card-header">
+            <h5 class="mb-0">🖥️ Estado de Sistemas</h5>
+          </div>
+          <div class="card-body">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item border-0 px-0 d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Sistema de Etiquetas</h6>
+                  <small class="text-muted">192.168.1.160:8000</small>
+                </div>
+                <span class="badge bg-success rounded-pill" id="status-labels">🟢 Online</span>
+              </div>
+              <div class="list-group-item border-0 px-0 d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Sistema de Reportes</h6>
+                  <small class="text-muted">192.168.1.160:8001</small>
+                </div>
+                <span class="badge bg-success rounded-pill" id="status-reports">🟢 Online</span>
+              </div>
+              <div class="list-group-item border-0 px-0 d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Intranet PPG</h6>
+                  <small class="text-muted">v2.1.0</small>
+                </div>
+                <span class="badge bg-info rounded-pill">ℹ️ Actualizada</span>
+              </div>
+              <div class="list-group-item border-0 px-0 d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-1">Sugerencias Pendientes</h6>
+                  <small class="text-muted">Almacenadas localmente</small>
+                </div>
+                <span class="badge bg-secondary rounded-pill" id="pending-suggestions">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secciones Principales -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="card ppg-card h-100" onclick="window.location.href='./areas/index.html'" style="cursor: pointer;">
+          <div class="card-body text-center p-4">
+            <div class="display-4 mb-3">🏢</div>
+            <h4 class="card-title">Áreas</h4>
+            <p class="card-text">Explora todos los departamentos y procesos de la empresa</p>
+            <div class="mt-3">
+              <span class="badge bg-primary me-1">Producción</span>
+              <span class="badge bg-success me-1">Almacén</span>
+              <span class="badge bg-info me-1">Ventas</span>
+              <span class="badge bg-warning text-dark">Taller</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card ppg-card h-100" onclick="window.location.href='./services/index.html'" style="cursor: pointer;">
+          <div class="card-body text-center p-4">
+            <div class="display-4 mb-3">🌐</div>
+            <h4 class="card-title">Servicios</h4>
+            <p class="card-text">Servicios internos, externos y recursos de la empresa</p>
+            <div class="mt-3">
+              <span class="badge bg-success me-1">Etiquetas</span>
+              <span class="badge bg-info me-1">Reportes</span>
+              <span class="badge bg-warning text-dark">Red Local</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card ppg-card h-100" onclick="window.location.href='./tools/index.html'" style="cursor: pointer;">
+          <div class="card-body text-center p-4">
+            <div class="display-4 mb-3">🛠️</div>
+            <h4 class="card-title">Herramientas</h4>
+            <p class="card-text">Accede a todas las herramientas y sistemas disponibles</p>
+            <div class="mt-3">
+              <span class="badge bg-primary me-1">Odoo</span>
+              <span class="badge bg-success me-1">Sugerencias</span>
+              <span class="badge bg-info">Plantillas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información y Noticias -->
+    <div class="row g-4 mb-5">
+      <!-- Anuncios -->
+      <div class="col-lg-6">
+        <div class="card ppg-card h-100">
+          <div class="card-header ppg-card-header">
+            <h5 class="mb-0">📢 Anuncios Importantes</h5>
+          </div>
+          <div class="card-body">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item border-0 px-0">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">🎉 Día de las Madres - Evento Especial</h6>
+                  <small class="text-muted">Hoy</small>
+                </div>
+                <p class="mb-1">Celebración especial para todas las madres trabajadoras.</p>
+                <small class="text-muted">
+                  <a href="./events/momsday.html" class="text-decoration-none">Ver detalles →</a>
+                </small>
+              </div>
+              <div class="list-group-item border-0 px-0">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">🚨 Simulacro de Emergencia</h6>
+                  <small class="text-muted">Esta semana</small>
+                </div>
+                <p class="mb-1">Próximo simulacro programado para el viernes.</p>
+                <small class="text-muted">
+                  <a href="./events/simulacro.html" class="text-decoration-none">Ver procedimiento →</a>
+                </small>
+              </div>
+              <div class="list-group-item border-0 px-0">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">📋 Nueva versión de Intranet</h6>
+                  <small class="text-muted">Ayer</small>
+                </div>
+                <p class="mb-1">Navegación mejorada y nuevas funcionalidades.</p>
+                <small class="text-muted">
+                  <a href="./docs/CHANGELOG.md" class="text-decoration-none">Ver cambios →</a>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enlaces Útiles -->
+      <div class="col-lg-6">
+        <div class="card ppg-card h-100">
+          <div class="card-header ppg-card-header">
+            <h5 class="mb-0">🔗 Enlaces Útiles</h5>
+          </div>
+          <div class="card-body">
+            <div class="list-group list-group-flush">
+              <a href="./docs/help/suggest.html" class="list-group-item list-group-item-action border-0 px-0">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">💡 Buzón de Sugerencias</h6>
+                  <small>→</small>
+                </div>
+                <p class="mb-1">Envía tus ideas para mejorar la empresa</p>
+              </a>
+              <a href="./docs/contact/ext-tel.html" class="list-group-item list-group-item-action border-0 px-0">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">📞 Directorio Telefónico</h6>
+                  <small>→</small>
+                </div>
+                <p class="mb-1">Extensiones de todos los departamentos</p>
+              </a>
+              <a href="./docs/index.html" class="list-group-item list-group-item-action border-0 px-0">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">📚 Documentación</h6>
+                  <small>→</small>
+                </div>
+                <p class="mb-1">Guías, manuales y recursos completos</p>
+              </a>
+              <a href="./docs/company/organigrama.html" class="list-group-item list-group-item-action border-0 px-0">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">🏛️ Acerca de PPG</h6>
+                  <small>→</small>
+                </div>
+                <p class="mb-1">Organigrama y información de la empresa</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información Adicional -->
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card ppg-card">
+          <div class="card-body text-center">
+            <h5 class="card-title">💡 ¿Tienes una sugerencia?</h5>
+            <p class="card-text">Ayúdanos a mejorar enviando tus ideas y comentarios</p>
+            <a href="./docs/help/suggest.html" class="btn btn-ppg-outline">Enviar Sugerencia</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card ppg-card">
+          <div class="card-body text-center">
+            <h5 class="card-title">📚 ¿Necesitas ayuda?</h5>
+            <p class="card-text">Consulta nuestra documentación completa y guías</p>
+            <a href="./docs/index.html" class="btn btn-ppg-outline">Ver Documentación</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="./assets/js/utils.js"></script>
 </body>
 </html>

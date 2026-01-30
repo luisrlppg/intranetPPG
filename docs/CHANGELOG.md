@@ -2,6 +2,29 @@
 
 Registro de cambios y mejoras realizadas en la intranet de Central de Plásticos Plasa.
 
+## [2.1.0] - 2026-01-30
+
+### Agregado
+- Nueva página dedicada para Áreas (`/areas/index.html`) con diseño en grid
+- Página de Herramientas con categorización y diseño mejorado
+- Página de Servicios con indicadores de estado en tiempo real
+- Navegación ultra-simplificada con dropdown único "PPG"
+- Estadísticas y métricas visuales en la página de áreas
+- Mapa de procesos interactivo
+- Indicadores de estado para servicios internos
+
+### Cambiado
+- Navegación principal reducida a 4 elementos: Inicio, PPG (dropdown), Documentación, Acerca de
+- Dropdown "PPG" incluye: Áreas, Servicios, Herramientas
+- Reorganización de accesos rápidos en página principal
+- Mejora en la experiencia de usuario con navegación más intuitiva
+
+### Mejorado
+- Diseño más limpio y menos saturado en la barra de navegación
+- Mejor organización visual de contenido
+- Accesibilidad mejorada con navegación simplificada
+- Consistencia visual entre todas las páginas principales
+
 ## [2.0.0] - 2026-01-30
 
 ### Agregado

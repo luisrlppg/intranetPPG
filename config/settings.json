@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "Intranet PPG",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Intranet corporativa de Central de Plásticos Plasa",
     "company": "Central de Plásticos Plasa",
     "lastUpdated": "2026-01-30"
@@ -13,8 +13,37 @@
     },
     "reports": {
       "url": "http://192.168.1.160:8001/",
-      "description": "Sistema de reportes"
+      "description": "Sistema de reportes",
+      "endpoints": {
+        "suggestions": "/api/sugerencias",
+        "health": "/api/health"
+      }
     }
+  },
+  "navigation": {
+    "main_sections": [
+      {
+        "id": "areas",
+        "name": "Áreas",
+        "path": "./areas/index.html",
+        "icon": "🏢",
+        "description": "Departamentos y procesos de la empresa"
+      },
+      {
+        "id": "services",
+        "name": "Servicios",
+        "path": "./services/index.html",
+        "icon": "🌐",
+        "description": "Servicios internos y externos"
+      },
+      {
+        "id": "tools",
+        "name": "Herramientas",
+        "path": "./tools/index.html",
+        "icon": "🛠️",
+        "description": "Herramientas y sistemas disponibles"
+      }
+    ]
   },
   "departments": [
     {
