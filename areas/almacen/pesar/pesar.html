@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedimiento para Pesar Piezas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212; /* Fondo oscuro */
+            color: #e0e0e0; /* Texto claro */
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #ffffff; /* Títulos en blanco */
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .list-group-item {
+            background-color: #1e1e1e; /* Fondo oscuro para elementos de lista */
+            color: #e0e0e0; /* Texto claro para elementos de lista */
+            border-color: #333; /* Borde más claro */
+        }
+        .contact-info {
+            background-color: #1e1e1e; /* Fondo oscuro para la sección de contacto */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px solid #333; /* Borde para resaltar */
+        }
+        code {
+            color: #f8f9fa; /* Color claro para el código */
+            background-color: #333; /* Fondo oscuro para el código */
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Procedimiento para Pesar Piezas</h1>
+
+        <section class="my-5">
+            <h2>1. Introducción</h2>
+            <p>Este procedimiento describe los pasos para pesar piezas de manera precisa utilizando una balanza digital.</p>
+            <h3>1.1 Basculas</h2>
+                <a class="btn btn-outline-light" href="./weigh1.html">Bascula Grande</a>
+                <a class="btn btn-outline-light" href="./weigh2.html">Bascula Mediana</a>
+        </section>
+
+        <section class="my-5">
+            <h2>2. Materiales Necesarios</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Balanza digital calibrada a ceros</li>
+                <li class="list-group-item">Piezas a pesar</li>
+                <li class="list-group-item">Superficie estable para colocar la balanza</li>
+                <li class="list-group-item">Peso unitario aproximado de una pieza (puede ser una libreta o software de inventario).</li>
+            </ul>
+        </section>
+
+        <section class="my-5">
+            <h2>3. Procedimiento</h2>
+
+            <h3>3.1 Preparación</h3>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">Verificar que la balanza esté en una superficie nivelada y libre de vibraciones.</li>
+                <li class="list-group-item">Encender la balanza y asegurarse de que marque <strong>cero (0.000 kg)</strong> antes de pesar.</li>
+                <li class="list-group-item">Si es necesario, colocar un recipiente vacío y tarar la balanza (<code>TARE</code>) para excluir su peso.</li>
+                <li class="list-group-item">Conocer el peso unitario de la pieza que vas a pesar.</li>
+                <li class="list-group-item">Verifica en la tabla de errores de acuerdo al peso unitario de tu pieza que cantidad de piezas se deben pesar para asegurar que el error sea 0.00%.</li>
+            </ol>
+            <ul>
+                <li>
+                    <a class="" href="./table.html">Bascula Torrey - Tabla de Errores Maximos QC-5</a>
+                </li>
+            </ul>
+
+            <h3>3.2.1 Pesaje de Piezas desde el inicio</h3>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">Colocar sobre la balanza el mínimo de piezas de acuerdo a la tabla de error. (ej. palillo 100 piezas) [Si quieres mas precision puedes incluso contar 500 piezas pero al menos deben ser 100 para ese producto segun la tabla de pesos y errores en la bascula.]</li>
+                <li class="list-group-item">Esperar a que la lectura se estabilice.</li>
+                <li class="list-group-item">Registrar el numero de piezas que se añadieron la bascula.</li>
+                <li class="list-group-item">Añadir el mismo numero de piezas que en el paso 1 (solamente para confirmar que se duplique exactamente la cantidad).</li>
+                <li class="list-group-item">Agregar el resto de las piezas que se van a pesar.</li>
+                <li class="list-group-item">Embolsa las piezas y comprueba que sea el mismo peso en otra bascula.</li>
+                <li class="list-group-item">Anota el peso en la bolsa. (Hazlo con letra pequeña)</li>
+                <li class="list-group-item">Anota tus iniciales en la bolsa. (Hazlo con letra pequeña)</li>
+            </ol>
+
+            <h3>3.2.2 Pesaje de Piezas con muestras contadas</h3>
+            <p>En caso de que en el turno anterior se hayan dejado muestras de piezas ya medidas.</p>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">Colocar las muestras que ya se contaron, sobre la balanza.</li>
+                <li class="list-group-item">Registrar el numero de piezas que se contaron.</li>
+                <li class="list-group-item">Agregar el resto de las piezas que se van a pesar.</li>
+                <li class="list-group-item">Embolsar las piezas y comprueba que sea el mismo peso en otra bascula.</li>
+                <li class="list-group-item">Anota el peso en la bolsa. (Hazlo con letra pequeña)</li>
+                <li class="list-group-item">Anota tus iniciales en la bolsa. (Hazlo con letra pequeña)</li>
+            </ol>
+
+            <h3>3.3 Cierre del Procedimiento</h3>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">Apagar la balanza si no se usará por un tiempo prolongado.</li>
+                <li class="list-group-item">Limpiar la superficie de pesaje si es necesario.</li>
+                <li class="list-group-item">Verificar que los registros sean correctos y almacenarlos en el sistema de inventario.</li>
+            </ol>
+        </section>
+
+        <section class="my-5">
+            <h2>4. Consideraciones de Precisión</h2>
+            <ul class="list-group">
+                <li class="list-group-item">No colocar objetos adicionales en la balanza durante el pesaje.</li>
+                <li class="list-group-item">Usar la función <code>TARE</code> para evitar errores por recipientes adicionales.</li>
+                <li class="list-group-item">Revisar la calibración de la balanza periódicamente.</li>
+            </ul>
+        </section>
+
+        <section class="contact-info my-5">
+            <h2>5. Contacto para Soporte</h2>
+            <p>Si la balanza presenta fallas, contactar al área de mantenimiento: <strong>soporte@plasticosplasa.com</strong><br>Ext. 718</p>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .fl {
+            display: flex;
+            margin: 20px;
+        }
+        .fl>div {
+            margin: 20px;
+            width: 200px;
+        }
+        h4 {
+            height: 40px;
+        }
+        p {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="m-5">
+        <h1>Odoo</h1>
+        <!--" la ruta ./../../../../ es la raiz del share -->
+        <!--" la ruta ./../../../ es la central de documentos en share -->
+        <a class="btn btn-outline-light" href="./test.html">Aprendizaje Extra</a>
+        <hr>
+        <h2>Operaciones de Usuario de Almacen</h2>
+        <hr>
+        <div>
+            <button class="btn btn-outline-light mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#locsearch">
+                Revisar inventario por ubicacion
+            </button>
+        
+            <div class="collapse mt-3" id="locsearch">
+                <div class="card card-body">
+                    <p>1. Haz click en la pestaña "Operaciones" > "Inventario Fisico"</p>
+                    <p>2. Elimina cualquier filtro que haya en el buscador. </p>
+                    <p>3. Escribe la ubicacion que necesitas. (Ej. "A03")</p>
+                    <p>4. Selecciona buscar por ubicacion.</p>
+                    <video width="640" height="360" controls>
+                        <source src="./../../../ppg/tools/odoo/assets/searchinvloc.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>                
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-outline-light mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#addmate">
+                Entradas de Material
+            </button>
+        
+            <div class="collapse mt-3" id="addmate">
+                <div class="card card-body">
+                    <p>Tambien llamado "Recibir Existencias"</p>
+                    <h3>¿Qué hacer cuando llega material? </h3>
+                    <p>(Ya sea de proveedores externos o de los diferentes departamentos)</p>
+                    <p>1. Haz click en la pestaña "Operaciones" > "Recibidos"</p>
+                    <p>2. Haz click en "Nuevo"</p>
+                    <p>3. Ingresa la siguiente informacion: </p>
+                    <ul>
+                        <li>Recibir de: (Selecciona el nombre del proveedor si es materia prima) | (Si es interno selecciona el nombre del departamento) </li>
+                        <li>Ubicacion de destino: (Selecciona la ubicacion en donde se va a almacenar el material)</li>
+                        <li>Agregar un linea: Selecciona el producto y la cantidad</li>
+                        <li>En la pestaña de Nota Ingresa tu nombre y el turno que trabajas</li>
+                    </ul>
+                    <video width="640" height="360" controls>
+                        <source src="./../../../ppg/tools/odoo/assets/receive.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>  
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <button class="btn btn-outline-light mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#exitmate">
+                Salidas de Material
+            </button>
+        
+            <div class="collapse mt-3" id="exitmate">
+                <div class="card card-body">
+                    <p>Tambien llamado "Dar de Baja o Vender Existencias"</p>
+                    <h3>¿Cómo hacer una entrega de material?</h3>
+                    <p>(Ya sea a clientes o a los departamentos internos)</p>
+                    <p>1. Haz click en la pestaña "Operaciones" > "Entregas"</p>
+                    <p>2. Haz click en "Nuevo"</p>
+                    <p>3. Direccion de entrega: (Selecciona el nombre del cliente o el departamento interno) </p>
+                    <p>4. Ubicacion de origen: (Selecciona la ubicacion donde se encuentra el material)</p>
+                    <hr>
+                        <p><strong>Para dar salida a multiples productos de diferentes ubicaciones:</strong> </p>
+                        <p>4(M). Ubicacion de origen: (Seleccion la ubicacion principal "alm/Stock")</p>
+                    <hr>
+                    <p>5. Agregar un linea: Selecciona el o los productos y la cantidad de cada uno.</p>
+                    <p><strong>NOTA:</strong> Si seleccionas la opcion <strong>"Buscar más..."</strong> podrás ver mas detalles sobre la ubicacion y cantidad del producto seleccionado.</p>
+                    <p>6. En la pestaña de Nota Ingresa tu nombre y el turno que trabajas</p>
+                    <video width="640" height="360" controls>
+                        <source src="./../../../ppg/tools/odoo/assets/delivery.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>  
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-outline-light mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#movemate">
+                Mover producto de ubicación
+            </button>
+        
+            <div class="collapse mt-3" id="movemate">
+                <div class="card card-body">
+                    <h3>¿Cómo se mueve un material de una ubicación a otra?</h3>
+                    <p>Antes de iniciar con la operacion revisa la ubicacion y cantidad del producto.</p>
+                    <p>Haz click en la pestaña "Operaciones" > "Interno"</p>
+                    <p>Haz click en "Nuevo"</p>
+                    <p>Contacto: (Escribe tu nombre o el de la persona que realizara el traslado) </p>
+                    <p>Ubicacion de origen: (Selecciona la ubicacion donde se encontraba el producto)</p>
+                    <p>Ubicacion de destino: (Selecciona la ubicacion a donde vas a mover el producto)</p>
+                    <p>Agregar un linea: Selecciona el producto y la cantidad</p>
+                    <p>Notas: Los productos deben buscarse por nombre, si no encuentras alguno, siempre puedes ir a la pestaña productos->productos y ver si existe, buscalo en categorias o producto</p>
+                    <video width="640" height="360" controls>
+                        <source src="./../../../ppg/tools/odoo/assets/movelocation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>  
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <h2>Operaciones de Administrador de Almacen</h2>
+        <hr>
+        <div>
+            <button class="btn btn-outline-light mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#newmate">
+                Crear Nuevo Producto
+            </button>
+        
+            <div class="collapse mt-3" id="newmate">
+                <div class="card card-body">
+                    <h3>¿Cómo ingresar un nuevo producto?</h3>
+                    <p>Haz click en la pestaña "Productos" > "Productos"</p>
+                    <p>Haz click en "Nuevo"</p>
+                    <p>Nombre del producto: (Elige un nombre) </p>
+                    <p>Tipo de producto: "producto almacenable"</p>
+                    <p>Categoria del producto: (Elige una categoria o crea una si no existe)</p>
+                    <video width="640" height="360" controls>
+                        <source src="./../../../ppg/tools/odoo/assets/newproduct.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>  
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-outline-light mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#minmate">
+                Cantidad Mínima e Ideal
+            </button>
+        
+            <div class="collapse mt-3" id="minmate">
+                <div class="card card-body">
+                    <h3>¿Cómo se modifican las cantidades mínimas e ideales de un producto?</h3>
+                    <p>1. Haz click en la pestaña "Configuracion" > "Reglas de Reordenamiento"</p>
+                    <p>2. Quita el filtro Activar auto</p>
+                    <p>3. Si el producto fue creado recientemente.</p>
+                    <p>3.1 Agrega una nueva entrada</p>
+                    <p>3.2 Ingresa el nombre del producto recien creado, continua en el paso 4.1</p>
+                    <p>4. Si el producto ya existia: </p>
+                    <p>4.1 Edita el campo de cantidad minima o cantidad maxima y presiona Enter</p>
+                    <p>La cantidad maxima es la cantidad ideal que debe haber de un producto.</p>
+                    <p>Los productos con existencias menores a la cantidad minima aparecen de esta manera.</p>
+                    <p>Para ver todos los productos con bajas existencias</p>
+                    <p>Haz click en la pestaña "Operaciones" > "Reabastecimiento"</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

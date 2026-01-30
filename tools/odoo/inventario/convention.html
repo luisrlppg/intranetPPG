@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convención de Nombres para Ensambles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .section-title {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    code {
+      background-color: #e9ecef;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h1 class="text-primary">Convención de Nombres para Ensambles y Subensambles en Odoo</h1>
+    <p class="lead">Esta convención aplica exclusivamente a productos que sean <strong>ensambles o subensambles</strong> formados por los componentes disponibles en la empresa.</p>
+
+    <h2 class="section-title">🧩 Componentes posibles</h2>
+    <p>El orden estricto a seguir en los nombres de productos es:</p>
+    <ul>
+      <li><strong>Tapadera</strong></li>
+      <li><strong>Mango</strong></li>
+      <li><strong>Punta</strong></li>
+      <li><strong>Botella</strong></li>
+      <li><strong>Escurridor</strong></li>
+    </ul>
+
+    <h2 class="section-title">🔤 Estructura del Nombre</h2>
+    <p>Para cada componente, la estructura es:</p>
+    <p><code>[CódigoComponente][Tipo][Diámetro][Largo][Color]</code></p>
+    <p><strong>Ejemplo:</strong> <code>TRN1625BL-PCV0812NR-PAY1010AZ-BOR2233TR-ECX0808BL</code></p>
+
+    <h2 class="section-title">🏷️ Códigos por componente</h2>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr><th>Componente</th><th>Código</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Taparrosca</td><td>TR</td></tr>
+        <tr><td>Sobretapa</td><td>ST</td></tr>
+        <tr><td>Pincel</td><td>PC</td></tr>
+        <tr><td>Palillo</td><td>PA</td></tr>
+        <tr><td>Vástago</td><td>V</td></tr>
+        <tr><td>Botella</td><td>BO</td></tr>
+        <tr><td>Escurridor</td><td>EC</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">🎯 Tipos de Tapaderas</h2>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr><th>Tipo</th><th>Código</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Normal</td><td>N</td></tr>
+        <tr><td>Triangular</td><td>T</td></tr>
+        <tr><td>Hexagonal</td><td>H</td></tr>
+        <tr><td>Yadis</td><td>Y</td></tr>
+        <tr><td>Bala</td><td>B</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">📏 Medidas</h2>
+    <ul>
+      <li><strong>Diámetro:</strong> 2 dígitos en milímetros (ej. 16mm → <code>16</code>)</li>
+      <li><strong>Largo:</strong> 2 dígitos en milímetros (ej. 25mm → <code>25</code>)</li>
+    </ul>
+
+    <h2 class="section-title">🎨 Color</h2>
+    <p>Utilizar el código de color abreviado, por ejemplo:</p>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr><th>Color</th><th>Código</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Blanco</td><td>BL</td></tr>
+        <tr><td>Negro</td><td>NR</td></tr>
+        <tr><td>Azul</td><td>AZ</td></tr>
+        <tr><td>Transparente</td><td>TR</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">🖊️ Tipos de Puntas</h2>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr><th>Tipo de Punta</th><th>Código</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Delineador</td><td>DL</td></tr>
+        <tr><td>Lip Gloss</td><td>LG</td></tr>
+        <tr><td>Cepillo Silicon</td><td>CS</td></tr>
+        <tr><td>Cepillo Nylon</td><td>CN</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="section-title">🪥 Tipos de Cepillo (aplican cuando la punta es CS o CN)</h3>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr><th>Tipo de Cepillo</th><th>Código</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Balita</td><td>BM</td></tr>
+        <tr><td>Bala</td><td>BP</td></tr>
+        <tr><td>Pino</td><td>PI</td></tr>
+        <tr><td>Pino Mini</td><td>PM</td></tr>
+        <tr><td>Barril</td><td>BR</td></tr>
+        <tr><td>Cacahuate</td><td>CH</td></tr>
+        <tr><td>Peine</td><td>PE</td></tr>
+        <tr><td>Espiral</td><td>ES</td></tr>
+        <tr><td>Bolita</td><td>BO</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">✅ Reglas Generales</h2>
+    <ul>
+      <li>Todos los códigos deben ir en <strong>mayúsculas</strong>.</li>
+      <li>Separar los componentes con guiones (<code>-</code>).</li>
+      <li>No incluir espacios ni caracteres especiales.</li>
+      <li>Omitir los componentes que no apliquen, conservando el orden.</li>
+      <li>Los nombres deben ser <strong>únicos y fácilmente identificables</strong>.</li>
+    </ul>
+  </div>
+</body>
+</html>

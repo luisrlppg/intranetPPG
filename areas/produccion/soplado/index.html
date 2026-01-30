@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soplado</title>
+    <style>
+        .fl {
+            display: flex;
+            margin: 20px;
+        }
+        .fl>div {
+            margin: 20px;
+            width: 200px;
+        }
+        h4 {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soplado</h1>
+    <!--" la ruta ./../../../../ es la raiz del share -->
+    <!--" la ruta ./../../../ es la central de documentos en share -->
+    <div class="fl">
+        <div>
+            <h4> Apagar maquina de soplado.</h4>
+            <video height="300" controls>
+                <source src="./../../../ppg/produccion/soplado/capacitacion/apagar-soplo.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <div>
+            <h4> Purgar maquina de soplado.</h4>
+            <video height="300" controls>
+                <source src="./../../../ppg/produccion/soplado/capacitacion/purge-soplo.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+        <div>
+            <h4> Variar frecuencia de maquina de soplado.</h4>
+            <video height="300" controls>
+                <source src="./../../../ppg/produccion/soplado/capacitacion/variar-freq-soplo.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+    </div>
+
+    <p></p>
+    <hr>
+    <a class="dropdown-item" href="./test.html">Aprendizaje Extra</a>
+</body>
+</html>

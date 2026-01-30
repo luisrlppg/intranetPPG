@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medición de Cepillos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .measurement-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+            height: 100%;
+            transition: transform 0.2s;
+        }
+        .measurement-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .measurement-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 8px;
+        }
+        .measurement-value {
+            font-size: 1.3rem;
+            color: #2980b9;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+        .tolerance {
+            font-size: 0.9rem;
+            padding: 5px 0;
+        }
+        .tolerance.up {
+            color: #27ae60;
+        }
+        .tolerance.down {
+            color: #e74c3c;
+        }
+        .photo-container {
+            background-color: #f5f7fa;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-height: 250px;
+            overflow: hidden;
+            border: 1px dashed #d1d8e0;
+        }
+        .photo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .img-caption {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+        .tolerance-value {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <h1>Especificaciones Técnicas de Cepillos</h1>
+            <p class="mb-0">Mediciones estándar con tolerancias permitidas</p>
+        </div>
+
+        <div class="row">
+            <!-- Columna para la foto -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="measurement-card">
+                    <div class="measurement-title">Modelo del Cepillo</div>
+                    <div class="photo-container">
+                        <!-- Reemplaza la fuente de la imagen con la ruta correcta de tu imagen -->
+                        <img src="./../../../ppg/produccion/cepillo/documentos/cepillos/cepillos-produccion/balaprosa.png" alt="Cepillo en medición">
+                    </div>
+                    <div class="img-caption">Cepillo modelo Bala-Prosa MaxiVolumen</div>
+                </div>
+            </div>
+
+            <!-- Medición 1: Longitud de Cerda -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="measurement-card">
+                    <div class="measurement-title"> (A) Longitud de Cerda </div>
+                    <div class="measurement-value">28.0 mm</div>
+                    <div class="tolerance up">Tolerancia +<span class="tolerance-value"> 1.5 mm</span></div>
+                    <div class="tolerance down">Tolerancia -<span class="tolerance-value"> 1.5 mm</span></div>
+                </div>
+            </div>
+
+            <!-- Medición 2: Diámetro Mayor -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="measurement-card">
+                    <div class="measurement-title"> (B) Diámetro Mayor </div>
+                    <div class="measurement-value">11.0 mm</div>
+                    <div class="tolerance up">Tolerancia +<span class="tolerance-value"> 0.75 mm</span></div>
+                    <div class="tolerance down">Tolerancia -<span class="tolerance-value"> 0.75 mm</span></div>
+                </div>
+            </div>
+
+            <!-- Medición 3: Diámetro Menor -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="measurement-card">
+                    <div class="measurement-title"> (C) Diámetro Menor </div>
+                    <div class="measurement-value">8.0 mm</div>
+                    <div class="tolerance up">Tolerancia +<span class="tolerance-value"> 0.75 mm</span></div>
+                    <div class="tolerance down">Tolerancia -<span class="tolerance-value"> 0.75 mm</span></div>
+                </div>
+            </div>
+
+            <!-- Medición 4: Alambre Sin Cerda -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="measurement-card">
+                    <div class="measurement-title"> (D) Alambre Sin Cerda </div>
+                    <div class="measurement-value">8.5 mm</div>
+                    <div class="tolerance up">Tolerancia +<span class="tolerance-value"> 0.5 mm</span></div>
+                    <div class="tolerance down">Tolerancia -<span class="tolerance-value"> 0.5 mm</span></div>
+                </div>
+            </div>
+
+            <!-- Medición 5: Longitud Total -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="measurement-card">
+                    <div class="measurement-title"> (F) Longitud Total </div>
+                    <div class="measurement-value">36.5 mm</div>
+                    <div class="tolerance up">Tolerancia +<span class="tolerance-value"> 1 mm</span></div>
+                    <div class="tolerance down">Tolerancia -<span class="tolerance-value"> 1 mm</span></div>
+                </div>
+            </div>
+
+            <!-- Espacio adicional para notas -->
+            <div class="col-12 mb-4">
+                <div class="measurement-card">
+                    <div class="measurement-title">Notas Técnicas</div>
+                    <p>• Material de cerda: Nylon grado industrial</p>
+                    <p>• Numero de Helices: 14</p>
+                    <p>• Diámetro de torcido del alambre: 1.26 mm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (opcional, solo si necesitas funcionalidades JS de Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

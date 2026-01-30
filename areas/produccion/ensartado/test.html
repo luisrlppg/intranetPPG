@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Ventas</title>
+</head>
+<body>
+    <h2>Aprendizaje Kinestesico</h2>
+    <form id="examen">
+        <p>1. ¿Cuál es la capital de Francia?</p>
+        <input type="radio" name="q1" value="Madrid"> Madrid<br>
+        <input type="radio" name="q1" value="París"> París<br>
+        <input type="radio" name="q1" value="Roma"> Roma<br>
+
+        <p>2. ¿Cuánto es 5 + 3?</p>
+        <input type="number" id="q2"><br>
+
+
+        <p>3. ¿Qué debes hacer cuando el Ing. te dice que hagas algo?</p>
+        <input type="radio" name="q3" value="A"> Esperar a que termine de hablar y hacerlo.<br>
+        <input type="radio" name="q3" value="B"> Hacerlo de inmediato.<br>
+        <input type="radio" name="q3" value="C"> No hacer nada.<br>
+        <input type="radio" name="q3" value="D"> Ninguna de las anteriores.<br>
+
+        <p> Si tienes alguna duda escríbenos al correo de soporte@plasticosplasa.com</p>
+
+        <button type="button" onclick="evaluar()">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function evaluar() {
+            var score = 0;
+            var answer;
+            
+            answer = document.querySelector('input[name="q1"]:checked');
+            if (answer && answer.value === "París") {
+                score++;
+            }
+
+            answer = document.getElementById("q2").value;
+            if (answer == 8) {
+                score++;
+            }
+
+            answer = document.querySelector('input[name="q3"]:checked');
+            if (answer && answer.value === "D") {
+                score++;
+            }
+
+            document.getElementById("resultado").innerText = "Puntaje: " + score + "/3";
+        }
+    </script>
+</body>
+</html>

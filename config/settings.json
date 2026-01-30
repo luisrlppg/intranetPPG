@@ -1,0 +1,62 @@
+{
+  "project": {
+    "name": "Intranet PPG",
+    "version": "2.0.0",
+    "description": "Intranet corporativa de Central de Plásticos Plasa",
+    "company": "Central de Plásticos Plasa",
+    "lastUpdated": "2026-01-30"
+  },
+  "services": {
+    "labels": {
+      "url": "http://192.168.1.160:8000/",
+      "description": "Sistema de etiquetas"
+    },
+    "reports": {
+      "url": "http://192.168.1.160:8001/",
+      "description": "Sistema de reportes"
+    }
+  },
+  "departments": [
+    {
+      "id": "almacen",
+      "name": "Almacén",
+      "path": "./areas/almacen/index.html",
+      "processes": ["embalaje", "pesar"]
+    },
+    {
+      "id": "produccion",
+      "name": "Producción",
+      "path": "./areas/produccion/index.html",
+      "processes": ["cepillo", "ensamble", "ensartado", "inyeccion", "molido", "soplado", "triturado"]
+    },
+    {
+      "id": "taller",
+      "name": "Taller",
+      "path": "./areas/taller/index.html",
+      "processes": []
+    },
+    {
+      "id": "ventas",
+      "name": "Ventas",
+      "path": "./areas/ventas/index.html",
+      "processes": []
+    }
+  ],
+  "contacts": {
+    "support": {
+      "email": "soporte@plasticosplasa.com",
+      "extension": "718",
+      "name": "Luis Roberto Lomeli"
+    },
+    "leader": {
+      "extension": "713",
+      "name": "Luis Plascencia"
+    }
+  },
+  "theme": {
+    "default": "dark",
+    "bootstrap_version": "5.3.3",
+    "primary_color": "#0d6efd",
+    "background_color": "#121212"
+  }
+}
