@@ -28,10 +28,16 @@ if ! command -v docker &> /dev/null; then
 fi
 
 # Verificar si Docker Compose está instalado
-if ! command -v docker compose &> /dev/null; then
+if command -v "docker compose" &> /dev/null; then
+    DOCKER_COMPOSE="docker compose"
+elif command -v docker-compose &> /dev/null; then
+    DOCKER_COMPOSE="docker-compose"
+else
     print_error "Docker Compose no está instalado. Por favor instala Docker Compose primero."
     exit 1
 fi
+
+print_status "Usando: $DOCKER_COMPOSE"
 
 # Crear directorio de logs si no existe
 mkdir -p logs
@@ -46,11 +52,11 @@ fi
 # Limpiar contenedores previos si existen
 if docker ps -a | grep -q "intranet-ppg"; then
     print_warning "Contenedor intranet-ppg ya existe, eliminándolo..."
-    docker-compose down 2>/dev/null || true
+    $DOCKER_COMPOSE down 2>/dev/null || true
 fi
 
 print_status "Construyendo imagen Docker..."
-docker compose build
+$DOCKER_COMPOSE build
 
 if [ $? -eq 0 ]; then
     print_status "Imagen construida exitosamente"
@@ -60,7 +66,7 @@ else
 fi
 
 print_status "Iniciando contenedor..."
-docker compose up -d
+$DOCKER_COMPOSE up -d
 
 if [ $? -eq 0 ]; then
     print_status "Contenedor iniciado exitosamente"
@@ -69,7 +75,7 @@ if [ $? -eq 0 ]; then
     sleep 5
     
     # Verificar estado del contenedor
-    if docker compose ps | grep -q "Up"; then
+    if $DOCKER_COMPOSE ps | grep -q "Up"; then
         print_status "✅ Intranet PPG desplegada exitosamente!"
         echo ""
         echo "🌐 Accesos disponibles:"

@@ -28,10 +28,22 @@ if ! command -v docker &> /dev/null; then
 fi
 
 # Verificar si Docker Compose está instalado
-if ! command -v docker-compose &> /dev/null; then
+if ! command -v docker &> /dev/null; then
+    print_error "Docker no está instalado. Por favor instala Docker primero."
+    exit 1
+fi
+
+# Verificar Docker Compose (con espacio o guión)
+if command -v "docker compose" &> /dev/null; then
+    DOCKER_COMPOSE="docker compose"
+elif command -v docker-compose &> /dev/null; then
+    DOCKER_COMPOSE="docker-compose"
+else
     print_error "Docker Compose no está instalado. Por favor instala Docker Compose primero."
     exit 1
 fi
+
+print_status "Usando: $DOCKER_COMPOSE"
 
 # Crear directorio de logs si no existe
 mkdir -p logs
@@ -39,11 +51,11 @@ mkdir -p logs
 # Limpiar contenedores previos si existen
 if docker ps -a | grep -q "intranet-ppg"; then
     print_warning "Contenedor intranet-ppg ya existe, eliminándolo..."
-    docker-compose -f docker-compose.simple.yml down 2>/dev/null || true
+    $DOCKER_COMPOSE -f docker-compose.simple.yml down 2>/dev/null || true
 fi
 
 print_status "Construyendo imagen Docker..."
-docker-compose -f docker-compose.simple.yml build
+$DOCKER_COMPOSE -f docker-compose.simple.yml build
 
 if [ $? -eq 0 ]; then
     print_status "Imagen construida exitosamente"
@@ -53,7 +65,7 @@ else
 fi
 
 print_status "Iniciando contenedor..."
-docker-compose -f docker-compose.simple.yml up -d
+$DOCKER_COMPOSE -f docker-compose.simple.yml up -d
 
 if [ $? -eq 0 ]; then
     print_status "Contenedor iniciado exitosamente"
@@ -62,7 +74,7 @@ if [ $? -eq 0 ]; then
     sleep 5
     
     # Verificar estado del contenedor
-    if docker-compose -f docker-compose.simple.yml ps | grep -q "Up"; then
+    if $DOCKER_COMPOSE -f docker-compose.simple.yml ps | grep -q "Up"; then
         print_status "✅ Intranet PPG desplegada exitosamente!"
         echo ""
         echo "🌐 Accesos disponibles:"
@@ -72,14 +84,14 @@ if [ $? -eq 0 ]; then
         echo ""
         echo "📊 Monitoreo:"
         echo "   - Estado: http://localhost/status.json"
-        echo "   - Logs: docker-compose -f docker-compose.simple.yml logs -f"
+        echo "   - Logs: $DOCKER_COMPOSE -f docker-compose.simple.yml logs -f"
         echo ""
         echo "📁 Archivos NAS (si está disponible):"
         echo "   - http://localhost/nas/"
         
         # Verificar si el NAS está montado
         sleep 2
-        if docker-compose -f docker-compose.simple.yml exec intranet-ppg test -d /mnt/nas 2>/dev/null; then
+        if $DOCKER_COMPOSE -f docker-compose.simple.yml exec intranet-ppg test -d /mnt/nas 2>/dev/null; then
             print_status "✅ NAS montado correctamente"
         else
             print_warning "⚠️  NAS no disponible - funcionando en modo local"
@@ -87,7 +99,7 @@ if [ $? -eq 0 ]; then
         
     else
         print_error "El contenedor no se inició correctamente"
-        docker-compose -f docker-compose.simple.yml logs
+        $DOCKER_COMPOSE -f docker-compose.simple.yml logs
         exit 1
     fi
 else

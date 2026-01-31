@@ -26,12 +26,17 @@ Esta guía explica cómo desplegar la Intranet PPG usando Docker con acceso al s
 
 3. **Desplegar con script automático**
    ```bash
-   # En Linux/Mac
-   chmod +x scripts/deploy.sh
+   # Opción 1: Despliegue directo (más simple, recomendado)
+   ./scripts/deploy-direct.sh
+   
+   # Opción 2: Con docker compose (versión simple)
+   ./scripts/deploy-simple.sh
+   
+   # Opción 3: Con docker compose (versión completa)
    ./scripts/deploy.sh
    
-   # En Windows (PowerShell)
-   docker-compose up -d --build
+   # En Windows (PowerShell) - usar docker compose con espacio
+   docker compose -f docker-compose.simple.yml up -d --build
    ```
 
 4. **Verificar despliegue**
