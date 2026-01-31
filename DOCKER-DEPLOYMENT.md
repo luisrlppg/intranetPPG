@@ -156,6 +156,30 @@ docker-compose exec intranet-ppg find /mnt/nas -type f | head -10
 
 ## 🐛 Solución de Problemas
 
+### Error de red Docker superpuesta:
+```
+Error: Pool overlaps with other one on this address space
+```
+
+**Soluciones:**
+
+1. **Usar versión simple (recomendado):**
+   ```bash
+   ./scripts/deploy-simple.sh
+   # o
+   docker-compose -f docker-compose.simple.yml up -d --build
+   ```
+
+2. **Limpiar redes existentes:**
+   ```bash
+   docker network prune
+   docker-compose down
+   docker-compose up -d --build
+   ```
+
+3. **Cambiar subnet manualmente:**
+   Editar `docker-compose.yml` y cambiar `172.25.0.0/16` por otra subnet disponible.
+
 ### NAS no se monta:
 ```bash
 # Verificar conectividad

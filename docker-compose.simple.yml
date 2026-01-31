@@ -17,8 +17,6 @@ services:
     environment:
       - TZ=America/Mexico_City
       - NGINX_ENVSUBST_TEMPLATE_SUFFIX=.template
-    networks:
-      - ppg-network
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/status.json"]
@@ -32,18 +30,7 @@ services:
       - SYS_ADMIN
     devices:
       - /dev/fuse
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.intranet.rule=Host(`intranet.ppg.local`)"
-      - "traefik.http.services.intranet.loadbalancer.server.port=80"
 
 volumes:
   nas-data:
     driver: local
-
-networks:
-  ppg-network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.25.0.0/16
