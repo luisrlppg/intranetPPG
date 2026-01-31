@@ -37,7 +37,7 @@ fi
 mkdir -p logs
 
 print_status "Construyendo imagen Docker..."
-docker-compose build
+docker compose build
 
 if [ $? -eq 0 ]; then
     print_status "Imagen construida exitosamente"
