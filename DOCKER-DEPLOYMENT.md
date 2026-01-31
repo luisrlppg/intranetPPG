@@ -24,7 +24,12 @@ Esta guía explica cómo desplegar la Intranet PPG usando Docker con acceso al s
    # Editar .env si necesitas cambiar configuraciones
    ```
 
-3. **Desplegar con script automático**
+3. **Verificar configuración (opcional)**
+   ```bash
+   ./scripts/check-setup.sh
+   ```
+
+4. **Desplegar con script automático**
    ```bash
    # Opción 1: Despliegue directo (más simple, recomendado)
    ./scripts/deploy-direct.sh
@@ -38,6 +43,8 @@ Esta guía explica cómo desplegar la Intranet PPG usando Docker con acceso al s
    # En Windows (PowerShell) - usar docker compose con espacio
    docker compose -f docker-compose.simple.yml up -d --build
    ```
+
+   **Importante**: Los scripts se ejecutan automáticamente desde el directorio correcto.
 
 4. **Verificar despliegue**
    - Abrir http://localhost en el navegador

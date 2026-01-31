@@ -2,6 +2,13 @@
 
 echo "🚀 Desplegando Intranet PPG directamente (sin redes personalizadas)"
 
+# Cambiar al directorio raíz del proyecto
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+cd "$PROJECT_DIR"
+
+echo "📁 Directorio de trabajo: $(pwd)"
+
 # Colores para output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
