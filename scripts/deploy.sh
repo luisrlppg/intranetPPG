@@ -47,7 +47,7 @@ else
 fi
 
 print_status "Iniciando contenedor..."
-docker-compose up -d
+docker compose up -d
 
 if [ $? -eq 0 ]; then
     print_status "Contenedor iniciado exitosamente"
@@ -56,7 +56,7 @@ if [ $? -eq 0 ]; then
     sleep 5
     
     # Verificar estado del contenedor
-    if docker-compose ps | grep -q "Up"; then
+    if docker compose ps | grep -q "Up"; then
         print_status "✅ Intranet PPG desplegada exitosamente!"
         echo ""
         echo "🌐 Accesos disponibles:"
@@ -73,7 +73,7 @@ if [ $? -eq 0 ]; then
         
         # Verificar si el NAS está montado
         sleep 2
-        if docker-compose exec intranet-ppg test -d /mnt/nas 2>/dev/null; then
+        if docker compose exec intranet-ppg test -d /mnt/nas 2>/dev/null; then
             print_status "✅ NAS montado correctamente"
         else
             print_warning "⚠️  NAS no disponible - funcionando en modo local"
@@ -81,7 +81,7 @@ if [ $? -eq 0 ]; then
         
     else
         print_error "El contenedor no se inició correctamente"
-        docker-compose logs
+        docker compose logs
         exit 1
     fi
 else
