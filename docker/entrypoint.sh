@@ -6,14 +6,35 @@ echo "🚀 Iniciando Intranet PPG..."
 mount_nas() {
     echo "📁 Intentando montar NAS en 192.168.1.178..."
     
-    # Intentar montaje SMB/CIFS primero
-    if mount -t cifs //192.168.1.178/share/Intranet /mnt/nas -o guest,uid=nginx,gid=nginx,iocharset=utf8,file_mode=0644,dir_mode=0755; then
-        echo "✅ NAS montado exitosamente via SMB/CIFS"
+    # Crear directorio de montaje
+    mkdir -p /mnt/nas
+    
+    # Verificar conectividad primero
+    if ! ping -c 1 -W 3 192.168.1.178 >/dev/null 2>&1; then
+        echo "⚠️  No hay conectividad con 192.168.1.178"
+        return 1
+    fi
+    
+    # Intentar montaje SMB/CIFS versión 2.0 sin credenciales
+    echo "🔄 Intentando montaje SMB/CIFS v2.0 sin credenciales..."
+    if timeout 15 mount -t cifs //192.168.1.178/share/Intranet /mnt/nas \
+        -o vers=2.0,sec=none,uid=101,gid=101,iocharset=utf8,file_mode=0644,dir_mode=0755,nounix,noserverino,cache=loose 2>/dev/null; then
+        echo "✅ NAS montado exitosamente via SMB/CIFS v2.0"
         return 0
     fi
     
-    # Si falla SMB, intentar NFS
-    if mount -t nfs 192.168.1.178:/share/Intranet /mnt/nas -o soft,intr,rsize=8192,wsize=8192; then
+    # Fallback: intentar con guest si sec=none falla
+    echo "🔄 Fallback: Intentando con guest..."
+    if timeout 15 mount -t cifs //192.168.1.178/share/Intranet /mnt/nas \
+        -o vers=2.0,guest,uid=101,gid=101,iocharset=utf8,file_mode=0644,dir_mode=0755,nounix,noserverino 2>/dev/null; then
+        echo "✅ NAS montado exitosamente via SMB/CIFS v2.0 (guest)"
+        return 0
+    fi
+    
+    # Si falla SMB, intentar NFS con opciones más compatibles
+    echo "🔄 Intentando montaje NFS..."
+    if timeout 10 mount -t nfs 192.168.1.178:/share/Intranet /mnt/nas \
+        -o soft,intr,nolock,rsize=8192,wsize=8192,timeo=14,retrans=2 2>/dev/null; then
         echo "✅ NAS montado exitosamente via NFS"
         return 0
     fi
@@ -54,11 +75,16 @@ check_connectivity
 mount_nas
 
 # Crear archivo de estado
+nas_status="false"
+if mountpoint -q /mnt/nas 2>/dev/null || [ "$(ls -A /mnt/nas 2>/dev/null)" ]; then
+    nas_status="true"
+fi
+
 cat > /usr/share/nginx/html/status.json << EOF
 {
     "status": "running",
     "timestamp": "$(date -Iseconds)",
-    "nas_mounted": $([ -d "/mnt/nas" ] && echo "true" || echo "false"),
+    "nas_mounted": $nas_status,
     "version": "2.1.0"
 }
 EOF
