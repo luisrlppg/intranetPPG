@@ -192,6 +192,53 @@ Error: Pool overlaps with other one on this address space
 3. **Cambiar subnet manualmente:**
    Editar `docker-compose.yml` y cambiar `172.25.0.0/16` por otra subnet disponible.
 
+### Contenedor no accesible desde otras PCs:
+
+**Diagnóstico:**
+```bash
+./scripts/check-network-access.sh
+```
+
+**Soluciones:**
+
+1. **Configurar firewall automáticamente:**
+   ```bash
+   # Windows (ejecutar como Administrador)
+   ./scripts/setup-firewall.sh
+   
+   # Linux
+   sudo ./scripts/setup-firewall.sh
+   ```
+
+2. **Configurar firewall manualmente:**
+   ```bash
+   # Windows (como Administrador)
+   netsh advfirewall firewall add rule name="Intranet PPG" dir=in action=allow protocol=TCP localport=80
+   netsh advfirewall firewall add rule name="Intranet PPG Alt" dir=in action=allow protocol=TCP localport=8080
+   
+   # Linux (Ubuntu/Debian)
+   sudo ufw allow 80
+   sudo ufw allow 8080
+   
+   # Linux (CentOS/RHEL)
+   sudo firewall-cmd --permanent --add-port=80/tcp
+   sudo firewall-cmd --permanent --add-port=8080/tcp
+   sudo firewall-cmd --reload
+   ```
+
+3. **Verificar que el contenedor escuche en todas las interfaces:**
+   ```bash
+   docker port intranet-ppg
+   # Debe mostrar: 0.0.0.0:80->80/tcp y 0.0.0.0:8080->80/tcp
+   ```
+
+4. **Reiniciar contenedor con configuración correcta:**
+   ```bash
+   docker stop intranet-ppg
+   docker rm intranet-ppg
+   ./scripts/deploy-direct.sh
+   ```
+
 ### NAS no se monta:
 ```bash
 # Verificar conectividad

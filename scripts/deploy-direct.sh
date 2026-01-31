@@ -55,8 +55,8 @@ print_status "Iniciando contenedor..."
 docker run -d \
     --name intranet-ppg \
     --privileged \
-    -p 80:80 \
-    -p 8080:80 \
+    -p 0.0.0.0:80:80 \
+    -p 0.0.0.0:8080:80 \
     -v "$(pwd)/logs:/var/log/nginx" \
     -v "$(pwd)/docker/nginx.conf:/etc/nginx/nginx.conf:ro" \
     -e TZ=America/Mexico_City \

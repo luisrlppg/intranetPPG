@@ -5,8 +5,8 @@ services:
     build: .
     container_name: intranet-ppg
     ports:
-      - "80:80"
-      - "8080:80"  # Puerto alternativo
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:8080:80"  # Puerto alternativo
     volumes:
       # Montar configuración personalizada si existe
       - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
