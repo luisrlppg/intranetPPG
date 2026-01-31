@@ -1,0 +1,37 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Logs
+logs/
+*.log
+
+# Node modules si los hubiera
+node_modules/
+npm-debug.log*
+
+# Archivos temporales
+.tmp/
+.cache/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de desarrollo
+.vscode/
+.idea/
+
+# Documentación de desarrollo
+README.md
+docs/README-REORGANIZACION.md
+docs/CONTRIBUTING.md
+
+# Archivos de configuración local
+.env
+.env.local

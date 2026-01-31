@@ -149,6 +149,11 @@ const PPGDashboard = {
                 name: 'Inventario PPG'
             },
             { 
+                url: 'http://192.168.1.160:50000/', 
+                elementId: 'status-pc-control',
+                name: 'Control de PCs'
+            },
+            { 
                 url: 'http://192.168.1.160:8070/', 
                 elementId: 'status-odoo',
                 name: 'Odoo ERP'

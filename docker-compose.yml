@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  intranet-ppg:
+    build: .
+    container_name: intranet-ppg
+    ports:
+      - "80:80"
+      - "8080:80"  # Puerto alternativo
+    volumes:
+      # Montar configuración personalizada si existe
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+      # Volumen para logs
+      - ./logs:/var/log/nginx
+      # Volumen para archivos temporales del NAS
+      - nas-data:/mnt/nas
+    environment:
+      - TZ=America/Mexico_City
+      - NGINX_ENVSUBST_TEMPLATE_SUFFIX=.template
+    networks:
+      - ppg-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/status.json"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    # Privilegios necesarios para montar sistemas de archivos
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.intranet.rule=Host(`intranet.ppg.local`)"
+      - "traefik.http.services.intranet.loadbalancer.server.port=80"
+
+volumes:
+  nas-data:
+    driver: local
+
+networks:
+  ppg-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

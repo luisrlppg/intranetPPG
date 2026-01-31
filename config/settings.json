@@ -24,6 +24,11 @@
       "description": "Sistema de gestión de inventarios PPG",
       "features": ["Productos", "Stock", "Almacén", "Control de inventario"]
     },
+    "pc_control": {
+      "url": "http://192.168.1.160:50000/",
+      "description": "Sistema de control y encendido de PCs",
+      "features": ["Wake-on-LAN", "Administración de equipos", "Control remoto"]
+    },
     "odoo": {
       "url": "http://192.168.1.160:8070/",
       "description": "Sistema ERP Odoo",

@@ -112,13 +112,10 @@ Cada área incluye:
 
 ## 🔧 Instalación y Uso
 
+### Desarrollo Local
 1. Clona el repositorio
 2. Abre `index.html` en un navegador web
 3. Navega por los diferentes departamentos y servicios
-
-No requiere instalación de dependencias adicionales, funciona directamente en el navegador.
-
-### Desarrollo Local
 
 Para desarrollo, se recomienda usar un servidor local:
 
@@ -132,6 +129,32 @@ npx http-server
 # Con PHP
 php -S localhost:8000
 ```
+
+### Despliegue con Docker 🐳
+
+Para despliegue en producción con acceso al servidor NAS:
+
+```bash
+# Despliegue rápido
+./scripts/deploy.sh
+
+# O manualmente
+docker-compose up -d --build
+```
+
+**Características del despliegue Docker:**
+- ✅ Servidor web nginx optimizado
+- ✅ Acceso automático al NAS (192.168.1.178/share/Intranet)
+- ✅ Monitoreo de salud integrado
+- ✅ Logs centralizados
+- ✅ Reinicio automático
+
+**Accesos disponibles:**
+- Intranet: `http://localhost`
+- Estado: `http://localhost/status.json`
+- Archivos NAS: `http://localhost/nas/`
+
+Ver [DOCKER-DEPLOYMENT.md](DOCKER-DEPLOYMENT.md) para documentación completa.
 
 ## 📚 Documentación Adicional
 
