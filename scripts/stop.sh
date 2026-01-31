@@ -3,7 +3,7 @@
 echo "🛑 Deteniendo Intranet PPG"
 
 # Detener contenedor
-docker-compose down
+docker compose down
 
 echo "✅ Contenedor detenido"
 
