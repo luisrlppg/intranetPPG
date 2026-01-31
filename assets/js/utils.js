@@ -142,6 +142,16 @@ const PPGDashboard = {
                 url: 'http://192.168.1.160:8001/', 
                 elementId: 'status-reports',
                 name: 'Sistema de Reportes'
+            },
+            { 
+                url: 'http://192.168.1.160:5000/', 
+                elementId: 'status-inventory',
+                name: 'Inventario PPG'
+            },
+            { 
+                url: 'http://192.168.1.160:8070/', 
+                elementId: 'status-odoo',
+                name: 'Odoo ERP'
             }
         ];
         
